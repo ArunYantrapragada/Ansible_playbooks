@@ -1,0 +1,8 @@
+---
+- hosts: dbserver
+  user: root
+  connection: ssh
+
+  tasks:
+   - name: copy playbook files from control machine to webserver
+     action: copy src=/etc/ansible/playbooks/apache.yml dest=/etc/ansible/playbooks owner=root mode=0777 backup=yes

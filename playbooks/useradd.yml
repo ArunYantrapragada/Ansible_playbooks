@@ -1,0 +1,8 @@
+---
+- hosts: all
+  user: root
+  connection: ssh
+
+  tasks:
+   - name: add user to all servers named arun
+     action: user name=arun comment="this is a test user account"

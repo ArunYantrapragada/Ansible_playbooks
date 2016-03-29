@@ -1,0 +1,12 @@
+---
+- hosts: webserver
+  user: root
+  connection: ssh
+  
+  tasks:
+   - name: find specified dir exist or not ?
+     stat: path=/home/arun/example
+       register: p
+
+   - debug: msg="the path exists and is a directory"
+       when: p.stat.isdir is defined and p.stat.isdir

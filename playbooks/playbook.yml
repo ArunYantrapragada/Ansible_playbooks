@@ -1,0 +1,5 @@
+---
+ - hosts: all
+   user: root
+   tasks:
+    - user: name=john uid=1040

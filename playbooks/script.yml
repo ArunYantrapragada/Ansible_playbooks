@@ -1,0 +1,8 @@
+---
+
+- hosts: webserver
+  user: root
+  connection: ssh
+
+  tasks:
+   - script: /etc/ansible/playbooks/system_uptime.sh > /etc/ansible/playbooks/uptime.log

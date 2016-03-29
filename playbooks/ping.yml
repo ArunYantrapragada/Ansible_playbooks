@@ -1,0 +1,7 @@
+---
+- hosts: all
+  user: root
+  connection: ssh
+  tasks:
+   - name: ping all the host availible in inventory
+     ping:

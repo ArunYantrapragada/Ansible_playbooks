@@ -1,0 +1,19 @@
+---
+- hosts: all
+  user: root
+  sudo: yes
+ 
+  tasks:
+  - name: install apache on all servers
+    yum: name=httpd state=installed update_cache=yes
+    notify:
+    - restart httpd
+    
+
+  handlers:
+  - name: restart apache
+    service: name=httpd state=restarted enabled=yes
+
+  tasks:
+  - name: start apache at reboot
+    service: name=httpd enabled=yes

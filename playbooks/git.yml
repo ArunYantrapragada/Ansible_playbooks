@@ -1,0 +1,7 @@
+---
+- hosts: webserver
+  user: root
+  connection: ssh
+  tasks:
+   - name: checking out git repo to remote server
+     git: repo=ssh.//root@skoruzuser333.mylabserver.com dest=/etc/ansible/git-repo

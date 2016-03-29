@@ -1,0 +1,10 @@
+---
+
+- hosts: dbserver
+  user: root
+  sudo: yes
+  connection: ssh
+  
+  tasks:
+   - name: check for python packages
+     command: /etc/ansible/test

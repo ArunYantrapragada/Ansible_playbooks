@@ -1,0 +1,11 @@
+---
+- hosts: dbserver
+  user: root
+  connection: ssh
+  
+  tasks:
+    - name: install mysql on database server.
+      action: yum name=mariadb-server state=installed
+     
+    - name: start the mysql-server
+      service: name=mariadb state=restarted enabled=yes

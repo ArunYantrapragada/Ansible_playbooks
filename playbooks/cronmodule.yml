@@ -1,0 +1,9 @@
+---
+- hosts: all
+  user: arun 
+  sudo: yes
+  connection: ssh
+
+  tasks:
+   - name: add a cron job to user named arun
+     cron: name="list all files" minute="0" hour="20" job="ls -al > /home/arun/cronfileresult.log"

@@ -1,0 +1,12 @@
+---
+- hosts: webserver
+  user: root
+  connection: ssh
+  tasks: 
+    - name: send mail to all user indicating buil process
+      mail:
+        host='localhost'
+        port=25
+        to='root'
+        subject="finished deploying"
+        body='System called {{ ansible_hostname }} has been successfully setup'
